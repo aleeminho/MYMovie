@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  background-color: black;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+.nav-link {
+  color: white;
+  margin: 0.3rem 0.5rem;
+}
+
+.nav-link {
+  font-size: 0.8rem;
+  color: white;
+  margin: 0.3rem 0.5rem;
+}
+
+.nav-link:hover {
+  color: #e62838;
+}
+
+#home-trending {
+  background-color: black;
+  padding-bottom: 8rem;
+}
+
+.home-header {
+  background-image: url('../img/trial.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.home-header p {
+  font-weight: 500;
+  color: #e62838;
+  padding-top: 10rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+}
+
+.home-header span {
+  font-weight: 700;
+}
+
+.home-header h1 {
+  font-weight: 300;
+  color: white;
+  font-size: 5rem;
+  letter-spacing: 0.2rem;
+}
+
+.card {
+  background-color: transparent;
+  border: 0;
+}
+
+.card-body {
+  padding-left: 0;
+}
+
+.card-title {
+  font-size: 1rem;
+  color: white;
+  height: 25%;
+}
+
+.card-text {
+  color: rgb(173, 173, 173);
+  font-size: 0.8rem;
+}
+
+#home-trending .btn {
+  border-radius: 0.2rem;
+  background-color: #e62838;
+  letter-spacing: 0.2rem;
+  color: white;
+}
+
+#home-trending .btn:hover {
+  border-radius: 0.2rem;
+  background-color: white;
+  letter-spacing: 0.2rem;
+  color: #e62838;
+}
+
+#register-page {
+  height: 100vh;
+}
+
+.register-part {
+  background-color: white;
+  height: 100vh;
+}
+
+.register-part h1,
+h3 {
+  font-weight: 400;
+  color: #e62838
+}
+
+.register-part form {
+  width: 80%;
+  color: black;
+}
+
+.register-part .btn {
+  color: white;
+  background-color: #e62838;
+}
+
+.register-part form input {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.register-part span {
+  font-weight: 700;
+}
+
+#register-page .background-part {
+  color: white;
+  background-image: url('../img/register-background.png');
+  background-size: cover;
+}
+
+#register-page .text-wrapper {
+  width: 40%;
+}
+
+.login-part {
+  background-color: white;
+  height: 100vh;
+}
+
+.login-part h1,
+h3 {
+  font-weight: 400;
+  color: #e62838
+}
+
+.login-part form {
+  width: 80%;
+  color: black;
+}
+
+.login-part .btn {
+  color: white;
+  background-color: #e62838;
+}
+
+.login-part form input {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.login-part span {
+  font-weight: 700;
+}
+
+#login-page .background-part {
+  background-image: url('../img/Mask\ group.png');
+  background-size: cover;
+  color: white;
+}
+
+.signout-button {
+  margin: 5px 0px;
+}
+
+#search-page {
+  height: 100vh;
+  background-color: rgb(12, 12, 12);
+}
+
+#search-page h1 {
+  font-size: 4rem;
+}
+
+#search-page .search-button {
+  background-color: e62838;
+  border-color: #e62838;
+}
+
+#search-page .search-button:hover {
+  background-color: white;
+  color: #e62838;
+}
+
+#search-page .details-button {
+  background-color: #e62838;
+  color: white;
+}
+
+#search-page .details-button:hover {
+  background-color: white;
+  color: #e62838;
+}
+
+.search-result {
+  background-color: rgb(12, 12, 12);
+}
+
+.footer-search h3 {
+  color: rgb(78, 78, 78);
+}
+
+.footer-search {
+
+  background-color: rgb(12, 12, 12);
+}
+
+.page {
+  color: grey;
+}
+
+#details-movie {
+  height: 100vh;
+  background-color: rgb(12, 12, 12);
+  height: 100%;
+}
+
+.details-image {
+  max-height: 22rem;
+  border: 4px solid white;
+  border-radius: 5px;
+}
+
+.details-title {
+  color: white;
+}
+
+.details-title h1 {
+  letter-spacing: 0.1rem;
+  color: #e62838;
+}
+
+.details-title h5 {
+  color: #e62838;
+  font-size: 1.3rem;
+}
+
+.genres {
+  color: #e62838;
+}
+
+.rating .released-year {
+  font-size: 1.3rem;
+}
+
+i {
+  color: yellow;
+}
+
+.cast img {
+  border-radius: 10px;
+}
+
+footer {
+  background-color: rgb(5, 5, 5);
+  padding: 2rem 0;
+  color: white;
+  font-weight: 500;
+  letter-spacing: 0.4rem;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  color: grey;
+}
+
+#details-tv {
+  height: 100vh;
+  background-color: rgb(12, 12, 12);
+  height: 100%;
+}
+
+.accordion-button {
+  background-color: black;
+  color: #e62838;
+}
+
+.accordion-body {
+  background-color: black;
+}
+
+.accordion-button:not(.collapsed) {
+  color: white;
+  background-color: black;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 70%;
+  }
+
+  .home-header h1 {
+    font-weight: 300;
+    color: white;
+    font-size: 3rem;
+  }
+
+}
+
+
+@media only screen and (max-width: 992px) {
+  .details-title {
+    margin-top: 1.5rem;
+  }
+
+}

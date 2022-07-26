@@ -1,0 +1,21 @@
+<nav class="navbar navbar-dark navbar-expand-lg sticky">
+  <div class="container-fluid ps-5 pe-5">
+    <a class="navbar-brand pe-3" href="/">MYMovie</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">Dashboard</a>
+        </li>
+      </ul>
+      <form class="d-flex" method="post" action="/search?page=1">
+        <input class="form-control me-2" required type="search" placeholder="Search" name="search">
+        <button class="btn btn-outline-light me-2" type="submit">Search</button>
+      </form>
+      <a href="/auth/signout" class="btn btn-outline-danger signout-button">Signout</a>
+    </div>
+  </div>
+</nav>

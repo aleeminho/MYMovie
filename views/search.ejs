@@ -1,0 +1,63 @@
+<%- include('./partials/header.ejs') %>
+  <%- include('./partials/navbar.ejs') %>
+    <section id="search-page">
+      <div class="container">
+        <h1 class="text-center text-light pt-5">Search</h1>
+        <form action="/search?page=1" method="post">
+          <div class="search-bar d-flex justify-content-center">
+            <div class="input-group mb-3 w-75 mt-5">
+              <input type="text" class="form-control" name="search" required id="search-input" placeholder="title">
+              <button class="search-button btn btn-outline-light" id="search-button" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <% if (data !==undefined) { %>
+        <div class="search-result">
+          <div class="container">
+            <div class="row mt-5">
+              <% data.results.forEach(e=> { %>
+
+                <% if (e.poster_path) { %>
+                  <% const d=e.release_date ? new Date(e.release_date) : new Date(e.first_air_date) %>
+                    <div class="col-lg-3 col-md-6 mb-4 mt-5 d-flex justify-content-center">
+                      <div class="card h-100">
+                        <img src="https://image.tmdb.org/t/p/w500<%= e.poster_path %>" class="card-img-top"
+                          alt="film's poster">
+                        <div class="card-body">
+                          <h5 class="card-title mb-3">
+                            <%=e.title || e.name %>
+                          </h5>
+                          <p class="card-text mb-2">Released <%= `${d.toLocaleDateString('en-US', { month: 'short' })}
+                              ${d.getDate()}, ${d.getFullYear()}` ?? 'unknown' %>
+                          </p>
+                          <p class="card-text mb-2">
+                            <%=e.vote_average.toFixed(2)%> / 10
+                          </p>
+                          <a href="/details/<%= e.id %>/<%= e.media_type %>" class="btn details-button">Details</a>
+                        </div>
+                      </div>
+                    </div>
+                    <% } %>
+
+                      <% }) %>
+                        <p class="page me-3 text-center mt-3">Page <%= data.page %> of <%= pages %>
+                        </p>
+                        <div class="container d-flex justify-content-center mt-2">
+                          <% for (let i=1; i <=pages; i++) { %>
+                            <form action="/search?page=<%= i %>&query=<%= query %>" class="text-center" method="post">
+                              <input class="me-2 ms-2 btn btn-outline-light" type="submit" value="<%= i %> ">
+                              </input>
+                            </form>
+                            <% } %>
+                        </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+          <div class="footer-search pt-5 pb-5">
+            <h3 class="text-center mb-3">That's it.</h3>
+            <h3 class="text-center">You didn't find anything you're looking for? uuu poor man.</h3>
+          </div>
+    </section>
+    <%- include('./partials/footer.ejs') %>

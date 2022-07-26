@@ -1,0 +1,36 @@
+<%- include('./partials/header.ejs') %>
+  <%- include('./partials/navbar.ejs') %>
+    <section id="home-trending">
+      <div class="home-header pb-5">
+        <div class="container">
+          <p class="ms-1">NOW TRENDING</p>
+          <h1><span>NOW</span> TRENDING</h1>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <% data.forEach(e=> { %>
+            <% const d=e.release_date ? new Date(e.release_date) : new Date(e.first_air_date) %>
+              <div class="col-lg-3 col-md-6 mb-4 mt-5 d-flex justify-content-center">
+                <div class="card h-100">
+                  <img src="https://image.tmdb.org/t/p/w500<%= e.poster_path %>" class="card-img-top"
+                    alt="film's poster">
+                  <div class="card-body">
+                    <h5 class="card-title mb-3">
+                      <%=e.title || e.name %>
+                    </h5>
+                    <p class="card-text mb-2">Released <%= `${d.toLocaleDateString('en-US', { month: 'short' })}
+                        ${d.getDate()}, ${d.getFullYear()}` %>
+                    </p>
+                    <p class="card-text mb-2">
+                      <%=e.vote_average.toFixed(2)%> / 10
+                    </p>
+                    <a href="/details/<%= e.id %>/<%= e.media_type %>" class="btn">Details</a>
+                  </div>
+                </div>
+              </div>
+              <% }) %>
+        </div>
+      </div>
+    </section>
+    <%- include('./partials/footer.ejs') %>
