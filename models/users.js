@@ -1,6 +1,7 @@
+require('dotenv').config()
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/mymoviedb')
+mongoose.connect(process.env.MONGODB_URI)
 
 const UserSchema = new mongoose.Schema({
   _id: String,
