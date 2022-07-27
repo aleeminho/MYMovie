@@ -12,11 +12,13 @@ const homeRouter = require('./routes/home')
 const authRouter = require('./routes/auth')
 const searchRouter = require('./routes/search')
 const detailsRouter = require('./routes/details')
+const ratingRouter = require('./routes/rating')
 const notFoundRouter = require('./routes/404')
 
 app.use('/', homeRouter, searchRouter)
 app.use('/auth', authRouter)
 app.use('/details', detailsRouter)
+app.use('/rating', ratingRouter)
 app.use('*', notFoundRouter)
 
 app.listen(process.env.PORT, () => {

@@ -22,7 +22,7 @@ const detailsHandler = {
 
         const reviewResponse = await axios.get(`https://api.themoviedb.org/3/tv/${id}/reviews?api_key=${process.env.API_KEY}&page=1`)
         const reviewData = await reviewResponse.data
-        res.render('detailsTv', { data, credit: creditData.cast.slice(0, 5), language: languageNames.of(data.original_language), reviews: reviewData.results })
+        res.render('detailsTv', { data, credit: creditData.cast.slice(0, 5), language: languageNames.of(data.original_language), reviews: reviewData.results, success: req.query?.success })
       }
       catch (error) {
         res.send(error)
@@ -41,7 +41,7 @@ const detailsHandler = {
         const reviewResponse = await axios.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.API_KEY}&page=1`)
         const reviewData = await reviewResponse.data
 
-        res.render('detailsMovie', { data, budget: formatter.format(data.budget), revenue: formatter.format(data.revenue), credit: creditData.cast.slice(0, 5), language: languageNames.of(data.original_language), reviews: reviewData.results })
+        res.render('detailsMovie', { data, budget: formatter.format(data.budget), revenue: formatter.format(data.revenue), credit: creditData.cast.slice(0, 5), language: languageNames.of(data.original_language), reviews: reviewData.results, success: req.query?.success })
       }
       catch (error) {
         res.send(error)

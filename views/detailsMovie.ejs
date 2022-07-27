@@ -20,6 +20,29 @@
               <i class="bi bi-star-fill me-2"></i>
               <%= data.vote_average.toFixed(2) %>
             </p>
+            <form action="/rating/movie?mid=<%= data.id %>" method="post">
+              <div class="rating-form mb-3 d-flex">
+                <select class="form-select w-25 me-3" name="rating" aria-label="Default select example">
+                  <option selected>⭐ Select</option>
+                  <option value="10">⭐(10) Masterpiece</option>
+                  <option value="9">⭐(9) Great</option>
+                  <option value="8">⭐(8) Very Good</option>
+                  <option value="7">⭐(7) Good</option>
+                  <option value="6">⭐(6) Fine</option>
+                  <option value="5">⭐(5) Average</option>
+                  <option value="4">⭐(4) Bad</option>
+                  <option value="3">⭐(3) Very Bad</option>
+                  <option value="2">⭐(2) Horrible</option>
+                  <option value="1">⭐(1) Appalling</option>
+                </select>
+                <input type="submit" class="btn rating-button" value="Submit">
+                <% if (success==='true' ) { %>
+                  <p class="text-danger ms-3 my-2">Added!</p>
+                  <% } else if (success==='false' ) { %>
+                    <p class="text-danger ms-3 my-2">It has been added!</p>
+                    <% } %>
+              </div>
+            </form>
             <p>
               <%= data.tagline %>
             </p>

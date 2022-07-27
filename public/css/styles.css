@@ -201,7 +201,8 @@ h3 {
   color: #e62838;
 }
 
-#search-page .details-button {
+#search-page .details-button,
+.rating-button {
   background-color: #e62838;
   color: white;
 }

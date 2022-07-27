@@ -7,7 +7,7 @@ const isAuthenticated = (req, res, next) => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-      res.locals.uid = uid
+      req.uid = uid
       next()
     } else {
       // User is signed out
@@ -17,4 +17,14 @@ const isAuthenticated = (req, res, next) => {
   });
 }
 
-module.exports = { isAuthenticated }
+const isAuthenticatedAuth = (req, res, next) => {
+  onAuthStateChanged(auth, (user) => {
+    if (!user) {
+      next()
+    } else {
+      res.redirect('/')
+    }
+  });
+}
+
+module.exports = { isAuthenticated, isAuthenticatedAuth }
