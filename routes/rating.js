@@ -9,6 +9,6 @@ router.route('/:media?')
   .post(isAuthenticated, postRating)
 
 router.route('/:media/delete')
-  .delete(isAuthenticated, deleteRating)
+  .get(isAuthenticated, deleteRating)
 
 module.exports = router
