@@ -37,7 +37,7 @@ const authHandler = {
   },
   getLogin: (req, res) => {
     res.locals.title = 'MYMovie | Login'
-    res.render('signin')
+    res.render('signIn')
   },
   postLogin: (req, res) => {
     const auth = getAuth(app)
