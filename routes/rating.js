@@ -4,7 +4,7 @@ const { getRating, postRating } = require('../handler/rating')
 
 const { isAuthenticated } = require('../middleware/isAuthenticated')
 
-router.route('/:media')
+router.route('/:media?')
   .get(isAuthenticated, getRating)
   .post(isAuthenticated, postRating)
 

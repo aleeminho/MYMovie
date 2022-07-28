@@ -1,8 +1,26 @@
+const axios = require('axios')
+
 const User = require('../models/users')
 
 const ratingHandler = {
-  getRating: (req, res) => {
-    res.json({ status: 'Anjay' })
+  getRating: async (req, res) => {
+    res.locals.title = "MYMovie | My Rating"
+    const user = await User.findById(req.uid)
+    const movieArr = []
+    for (const i of user.movie) {
+      const response = await axios.get(`https://api.themoviedb.org/3/movie/${i.id}?api_key=${process.env.API_KEY}`)
+      const data = response.data
+      const all = { ...data, rating: i.rating }
+      movieArr.push(all)
+    }
+    const showArr = []
+    for (const i of user.tv) {
+      const response = await axios.get(`https://api.themoviedb.org/3/tv/${i.id}?api_key=${process.env.API_KEY}`)
+      const data = response.data
+      const all = { ...data, rating: i.rating }
+      showArr.push(all)
+    }
+    res.render('rating', { movie: movieArr, show: showArr })
   },
   postRating: async (req, res) => {
     const { rating } = req.body
@@ -15,7 +33,6 @@ const ratingHandler = {
         rating,
       }
       const exist = media === 'tv' ? user.tv.filter(e => e.id === mid) : user.movie.filter(e => e.id === mid)
-      console.log(exist)
       if (exist.length > 0) {
         res.redirect(`/details/${mid}/${media}?success=false`)
       } else {
@@ -26,7 +43,6 @@ const ratingHandler = {
     } catch (error) {
       res.status(403).send(error)
     }
-    // res.json({ status: rating, user, movieId: req.query.movieId })
   }
 }
 

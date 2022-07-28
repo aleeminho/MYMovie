@@ -1,0 +1,110 @@
+<%- include('./partials/header.ejs') %>
+  <%- include('./partials/navbar.ejs') %>
+    <section id="rating-page" class="pt-5">
+      <h1 class="text-center mb-5">My Rating</h1>
+
+      <div class="container">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Movies
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <!-- <div class="rate-list">
+                  <p>1. <img src="https://image.tmdb.org/t/p/w500<%= movie[0].poster_path %>" class="rate-poster"
+                      alt="movie poster">
+                    <%= movie[0].rating %>
+                  </p>
+                </div> -->
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Score</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% let num=1 %>
+                      <% for (const i of movie) { %>
+                        <tr>
+                          <th scope="row">
+                            <%= num %>
+                          </th>
+                          <td><img src="https://image.tmdb.org/t/p/w500<%= i.poster_path %>" alt="poster"></td>
+                          <td>
+                            <%= i.title || i.name %>
+                          </td>
+                          <td>
+                            <%= i.rating %>
+                          </td>
+                          <td>
+                            <a href="" class="btn btn-primary">Edit</a>
+                            <a href="" class="btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                        <% num++ %>
+                          <% } %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                TV Shows
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Image</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">Score</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% let num2=1 %>
+                      <% for (const i of show) { %>
+                        <tr>
+                          <th scope="row">
+                            <%= num2 %>
+                          </th>
+                          <td><img src="https://image.tmdb.org/t/p/w500<%= i.poster_path %>" alt="poster"></td>
+                          <td>
+                            <%= i.title || i.name %>
+                          </td>
+                          <td>
+                            <%= i.rating %>
+                          </td>
+                          <td>
+                            <a href="" class="btn btn-primary">Edit</a>
+                            <a href="" class="btn btn-danger">Delete</a>
+                          </td>
+                        </tr>
+                        <% num2++ %>
+                          <% } %>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+    <%- include('./partials/footer.ejs') %>

@@ -8,6 +8,7 @@ const isAuthenticated = (req, res, next) => {
     if (user) {
       const uid = user.uid;
       req.uid = uid
+
       next()
     } else {
       // User is signed out
@@ -20,6 +21,7 @@ const isAuthenticated = (req, res, next) => {
 const isAuthenticatedAuth = (req, res, next) => {
   onAuthStateChanged(auth, (user) => {
     if (!user) {
+
       next()
     } else {
       res.redirect('/')
