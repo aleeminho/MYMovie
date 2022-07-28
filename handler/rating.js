@@ -48,12 +48,16 @@ const ratingHandler = {
     const { mid } = req.query
     const { media } = req.params
     const user = await User.findById(req.uid)
+    console.log(user)
+    console.log(user.movie)
     if (media === 'tv') {
       user.tv = user.tv.filter(e => e.id !== mid)
       await user.save()
     } else if (media === 'movie') {
       user.movie = user.movie.filter(e => e.id !== mid)
+      await user.save()
     }
+    console.log(user.movie)
     res.redirect('/rating')
   }
 }
