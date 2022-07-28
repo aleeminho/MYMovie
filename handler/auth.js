@@ -59,7 +59,7 @@ const authHandler = {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        res.redirect('/auth/signin')
+        res.redirect('/welcome')
       })
       .catch((error) => {
         res.json({ status: error })
