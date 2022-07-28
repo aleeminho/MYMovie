@@ -19,7 +19,7 @@
             <h3 class="mb-3 text-center">Log in to your account</h3>
           </div>
           <div class="d-flex justify-content-center">
-            <form action="/auth/login" method="post">
+            <form action="/auth/signin" method="post">
               <div class="mb-3">
                 <label class="form-label">Email address</label>
                 <input type="email" name="email" required class="form-control">
@@ -28,7 +28,7 @@
                 <label class="form-label">Password</label>
                 <input type="password" name="password" required class="form-control">
               </div>
-              <button type="submit" id="login" class="btn">Login</button>
+              <button type="submit" id="login" class="btn">Sign In</button>
             </form>
           </div>
           <p class="text-center mt-5">Dont have an account? <a href="/auth/register">Sign Up</a></p>
@@ -38,4 +38,4 @@
     </div>
   </section>
 
-  <%- include('./partials/footer-2.ejs') %>
+  <%- include('./partials/footer.ejs') %>

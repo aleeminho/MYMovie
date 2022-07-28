@@ -10,7 +10,7 @@ router.route('/register')
   .get(isAuthenticatedAuth, getRegister)
   .post(postRegister)
 
-router.route('/login')
+router.route('/signin')
   .get(isAuthenticatedAuth, getLogin)
   .post(postLogin)
 

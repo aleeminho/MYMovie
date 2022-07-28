@@ -1,0 +1,18 @@
+<%- include('./partials/header.ejs') %>
+  <div id="landing-top">
+    <nav class="navbar landing-navbar sticky-top">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1 fs-1 ms-5">MYMovie</span>
+        <a href="/auth/signin" class="btn btn-danger me-5">Sign In</a>
+      </div>
+    </nav>
+    <div class="landing-background d-flex align-items-center justify-content-center">
+      <div class="text-center">
+        <h1 class="fw-bold mb-4">Rate movies, TV shows, and more.</h1>
+        <h3 class="fw-semibold mb-4">Rate anywhere. Rate anytime</h3>
+        <p class="mb-4">Ready to rate? register your email to start rating.</p>
+        <a href="/auth/register" class="btn btn-danger btn-lg">Register</a>
+      </div>
+    </div>
+  </div>
+  <%- include('./partials/footer.ejs') %>

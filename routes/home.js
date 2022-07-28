@@ -2,11 +2,15 @@ const express = require('express')
 
 const router = express.Router()
 
-const { isAuthenticated } = require('../middleware/isAuthenticated')
-const { get } = require('../handler/home')
+const { isAuthenticated, isAuthenticatedAuth } = require('../middleware/isAuthenticated')
+const { getHome, getLanding } = require('../handler/home')
+
 
 
 router.route('/')
-  .get(isAuthenticated, get)
+  .get(isAuthenticated, getHome)
+
+router.route('/welcome')
+  .get(isAuthenticatedAuth, getLanding)
 
 module.exports = router

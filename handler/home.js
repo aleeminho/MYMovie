@@ -1,7 +1,7 @@
 const axios = require('axios')
 
 const homeHandler = {
-  get: async (req, res) => {
+  getHome: async (req, res) => {
     res.locals.title = 'MYMovie'
     let data;
     try {
@@ -11,6 +11,10 @@ const homeHandler = {
     } catch (error) {
       console.log(error)
     }
+  },
+  getLanding: (req, res) => {
+    res.locals.title = 'MYMovie | Landing Page'
+    res.render('landingPage')
   }
 }
 

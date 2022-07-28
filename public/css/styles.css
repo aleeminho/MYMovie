@@ -40,7 +40,7 @@ body {
 }
 
 .home-header {
-  background-image: url('../img/trial.png');
+  background-image: url('../img/theater.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -303,6 +303,48 @@ footer p {
 .accordion-button:not(.collapsed) {
   color: white;
   background-color: black;
+}
+
+#landing-top {
+  background-image: url('../img/landing-top-small.png');
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+#landing-top .btn,
+.landing-background a {
+  background-color: #e62838;
+}
+
+#landing-top h1 {
+  font-size: 3rem;
+}
+
+#landing-top h3 {
+  color: white;
+  font-size: 2rem;
+}
+
+#landing-top p {
+  color: white;
+  font-size: 1.2rem;
+}
+
+.landing-background a {
+  font-size: 1.5rem;
+}
+
+.landing-navbar {
+  background-color: transparent;
+}
+
+.landing-navbar .navbar-brand {
+  color: #e62838;
+}
+
+.landing-background {
+  height: 80vh;
 }
 
 @media only screen and (max-width: 768px) {

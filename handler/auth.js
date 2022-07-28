@@ -37,7 +37,7 @@ const authHandler = {
   },
   getLogin: (req, res) => {
     res.locals.title = 'MYMovie | Login'
-    res.render('login')
+    res.render('signin')
   },
   postLogin: (req, res) => {
     const auth = getAuth(app)
@@ -59,7 +59,7 @@ const authHandler = {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        res.redirect('/auth/login')
+        res.redirect('/auth/signin')
       })
       .catch((error) => {
         res.json({ status: error })

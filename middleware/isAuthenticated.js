@@ -12,7 +12,7 @@ const isAuthenticated = (req, res, next) => {
     } else {
       // User is signed out
       // ...
-      res.redirect('/auth/login')
+      res.redirect('/welcome')
     }
   });
 }
